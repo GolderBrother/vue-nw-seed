@@ -1,0 +1,36 @@
+@import "./_variables.scss";
+
+// common style
+.el-message {
+  top: 24%;
+  min-width: 230px;
+  .el-message__content {
+    font-size: 20px;
+    color: $brand-white !important;
+  }
+
+  &.msg-info {
+    .el-message__content {
+      color: $gray-base !important;
+    }
+  }
+  
+  &.msg-success {
+    border-color: $brand-success;
+    background-color: $brand-success;
+  }
+
+  &.msg-warning {
+    background-color: $brand-warning;
+    border-color: $brand-warning;
+  }
+
+  &.msg-error {
+    border-color: $brand-danger;
+    background-color: $brand-danger;
+  }
+
+  .el-message__icon {
+    display: none;
+  }
+}

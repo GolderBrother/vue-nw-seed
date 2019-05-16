@@ -1,0 +1,27 @@
+// demo style
+.demo__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  &__title {
+    margin: 20px 0;
+  }
+  &__list {
+    &-items {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    &-item {
+      display: block;
+      padding: 16px 24px;
+      border-bottom: 1px solid #e8e8e8;
+      font-size: 16px;
+      cursor: pointer;
+      &:hover {
+        background-color: #ccc;
+      }
+    }
+  }
+}

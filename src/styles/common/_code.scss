@@ -1,0 +1,66 @@
+.code {
+  width: 50%;
+  min-width: 800px;
+  margin: 30px auto 0;
+  text-align: left;
+  transition: height 0.2s;
+  &.expand {
+    height: 428px;
+  }
+  &.closure {
+    height: 0;
+  }
+}
+// hibot style
+.hibot {
+  padding: 20px 0 20px 38px;
+  margin: auto;
+  font-size: 14px;
+  font-family: monospace;
+  background: #111;
+  color: #e6e1dc;
+  &:first-child {
+    margin-top: 20px;
+  }
+  li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+    margin: 0;
+    padding-left: 10px;
+    border-left: 2px solid #ccc;
+    background: #111;
+    list-style-position: outside;
+    list-style-type: decimal;
+    text-indent: 0;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  .num {
+    color: #a5c261;
+  }
+  .attr {
+    color: #4093cc;
+  }
+  .comment {
+    color: #bc9458;
+    font-style: italic;
+  }
+  .special {
+    color: #da4939;
+  }
+  .statement {
+    color: #cc7833;
+  }
+  .include,
+  .head {
+    color: #cc7833;
+  }
+  .string {
+    color: #a5c261;
+  }
+  .type,
+  .keyword,
+  .val {
+    color: #da4939;
+  }
+}

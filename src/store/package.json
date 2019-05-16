@@ -1,0 +1,5 @@
+{
+  "devDependencies": {
+    "vuex": "^3.1.0"
+  }
+}

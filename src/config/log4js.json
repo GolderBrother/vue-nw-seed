@@ -1,0 +1,93 @@
+{
+	"appenders": {
+		"console": {
+			"type": "console"
+		},
+		"trace": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-access",
+			"pattern": ".yyyy-MM-dd.log",
+			"alwaysIncludePattern": true,
+			"maxLogSize": 31457280
+		},
+		"http": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-request",
+			"pattern": ".yyyy-MM-dd.log",
+			"appender": "trace",
+			"level": "trace",
+			"maxLevel": "trace"
+		},
+		"info": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-info",
+			"pattern": ".yyyy-MM-dd.log",
+			"alwaysIncludePattern": true,
+			"maxLogSize": 10000000,
+			"layout": {
+				"type": "pattern",
+				"pattern": "[%d{ISO8601}][%5p  %z  %c] %m"
+			},
+			"compress": true
+		},
+		"maxInfo": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-maxInfo",
+			"pattern": ".yyyy-MM-dd.log",
+			"appender": "info",
+			"level": "debug",
+			"maxLevel": "error"
+		},
+		"error": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-error",
+			"pattern": ".yyyy-MM-dd.log",
+			"maxLogSize": 10000000,
+			"encoding": "utf-8",
+			"alwaysIncludePattern": true,
+			"layout": {
+				"type": "pattern",
+				"pattern": "[%d{ISO8601}][%5p  %z  %c] %m"
+			},
+			"compress": true
+		},
+		"minError": {
+			"type": "dateFile",
+			"filename": "logs/biosecurity-minError",
+			"pattern": ".yyyy-MM-dd.log",
+			"appender": "error",
+			"level": "error"
+		}
+	},
+	"categories": {
+		"appenders": {
+			"cheese": {
+				"type": "file",
+				"filename": "cheese.log"
+			}
+		},
+		"categories": {
+			"default": {
+				"appenders": [
+					"cheese"
+				],
+				"level": "error"
+			}
+		},
+		"default": {
+			"appenders": [
+				"console"
+			],
+			"level": "info"
+		},
+		"logFile": {
+			"appenders": [
+				"console",
+				"info",
+				"error"
+			],
+			"level": "all"
+		}
+	},
+	"replaceConsole": true
+}
